@@ -1,0 +1,73 @@
+
+@font-face{
+     font-family: freeAgent;
+     src: url(freeagent3d-webfont.woff);
+}
+
+@font-face{
+     font-family: freeAgentBold;
+     src: url(freeagentbold-webfont.woff);
+}
+div.main{
+     width: 700px;
+     margin: 0 auto;
+}
+div.header{
+      background-color:rgb(255, 35, 35);
+      width:100%;
+      height: 200px;
+      margin: 0;
+      padding: 0;
+      margin-top: 0;
+}
+
+
+table.tblbody{
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     border-collapse: collapse;
+     /*border: 1px solid black;*/
+}
+
+
+.thead{
+     font-family: freeAgentBold;
+     align-content: center;
+     font-size: 128pt;
+}
+
+.title{
+     font-family: monospace;
+     font-size: 32px;
+}
+
+.rhead{
+     /*border: 1px dotted black;*/
+     background-color: rgb(255, 35, 35);
+     height: 200px;
+     margin: 0;
+     padding: 0;
+}
+
+.lbody{
+     /*border: 1px dotted black;*/
+     width:150px;
+     margin: 0;
+     padding: 0;
+}
+
+.cbody{
+     /*border: 1px dotted black;*/
+     width: 1000px;
+     height: 450px;
+     background-color: white;
+     /*background-color: rgb(255, 35, 35);*/
+     padding: 20px;
+     padding-top: 50px;
+     vertical-align: top;
+}
+
+.rbody{
+     /*border: 1px dotted black;*/
+}
