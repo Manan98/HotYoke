@@ -1,57 +1,57 @@
 <?php
+$uname=$_POST["uname"];
+$pword=$_POST["pword"];
+$email=$_POST["email"];
+$fname=$_POST["fname"];
+$lname=$_POST["lname"];
 
-require_once "../vendor/autoload.php";
+
+require_once "autoload.php";
 use MicrosoftAzure\Storage\Common\ServicesBuilder;
 use MicrosoftAzure\Storage\Common\ServiceException;
 use MicrosoftAzure\Storage\Table\Models\BatchOperations;
 use MicrosoftAzure\Storage\Table\Models\Entity;
 use MicrosoftAzure\Storage\Table\Models\EdmType;
-$connectionString = 'DefaultEndpointsProtocol=https;AccountName=yoke-db;AccountKey=<yourKey>';
+$connectionString = 'DefaultEndpointsProtocol=https;AccountName=hotyoke;AccountKey=nZ+Mwn9i7oDCi2k0f5kCb3l4RPjBp1ujG7l1hUYNJm1mVcITF9ZPE6jS3GW+onQOyIjR/FDdMe5IRX+Q/bAuSA==';
 $tableClient = ServicesBuilder::getInstance()->createTableService($connectionString);
 
+batchInsertCredentials($tableClient);
 
-
-
-
-
-
-
-
-$host='tcp:yoke-db.database.windows.net,1433';
-$username='yokeAdmin';
-$password='p@55w0rd';
-$database_name="yokeData";
-$table_name="Users";
-
-//$connection = mysqli_connect($host, $username, $password, $database_name) or die("connection failed");
-
-$uname=$_POST['uname'];
-$pword=$_POST['pword'];
-$email=$_POST['email'];
-$fname=$_POST['fname'];
-$lname=$_POST['lname'];
-
-// $connectionInfo = array("UID" => "yokeAdmin@yoke-db", "pwd" => "p@55w0rd", "Database" => "yokeData", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-// $serverName = "yoke-db.database.windows.net";
-// $conn = sqlsrv_connect($serverName, $connectionInfo);
-
-try {
-    $connection = new PDO("sqlsrv:server = tcp:yoke-db.database.windows.net,1433; Database = yokeData", "yokeAdmin", "p@55w0rd");
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
+function createTable($tableClient)
+{
+    try {
+        // Create table.
+        $tableClient->createTable("Users");
+    } catch(ServiceException $e){
+        $code = $e->getCode();
+        $error_message = $e->getMessage();
+        echo $code.": ".$error_message.PHP_EOL;
+    }
 }
 
 
 
-$sql="INSERT INTO $table_name(uname,pword,email,fname,lname)
-      VALUES($uname,$pword,$email,$fname,$lname)";
+function batchInsertCredentials($tableClient)
+{
+      $batchOp = new BatchOperations();
+      $entity = new Entity();
+      $entity->setPartitionKey("Users");
+      $entity->setRowKey($_POST["uname"]);
+      $entity->addProperty("pword", EdmType::STRING, $_POST["pword"]);
+      $entity->addProperty("email", EdmType::STRING, $_POST["email"]);
+      $entity->addProperty("fname", EdmType::STRING, $_POST["fname"]);
+      $entity->addProperty("lname", EdmType::STRING, $_POST["lname"]);
+      $batchOp->addInsertEntity("Users", $entity);
+    try {
+        header('Location: success.html');
+        $tableClient->batch($batchOp);
+    } catch(ServiceException $e){
+        $code = $e->getCode();
+        $error_message = $e->getMessage();
+        echo $code.": ".$error_message.PHP_EOL;
+    }
+}
 
-$result=mysqli_query($sql);
 
 
-#mysqli_close();
-sqlsrv_close();
 ?>
