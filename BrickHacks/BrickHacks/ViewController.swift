@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         userButton.addTarget(self, action: #selector(userButtonWasPressed), for: .touchUpInside)
         
         
-        titleLabel = UILabel(frame: CGRect(x: 0, y: view.frame.height * 0.1, width: view.frame.width / 2.0, height: 30))
+        titleLabel = UILabel(frame: CGRect(x: 0, y: view.frame.height * 0.2, width: view.frame.width / 2.0, height: 30))
         titleLabel.center = CGPoint(x: view.center.x, y: titleLabel.center.y)
         titleLabel.text = "Who Are You?"
         titleLabel.font = UIFont.systemFont(ofSize: 20)

@@ -20,6 +20,7 @@ class UserViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     
     var sendButton: UIButton!
     var browseButton: UIButton!
+    var login: UIButton!
     
     var messageField: UITextField!
     var chatView: UITextView!
@@ -62,9 +63,9 @@ class UserViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         messageField.font = UIFont.systemFont(ofSize: 15)
         messageField.textAlignment = .center
         messageField.textColor = .black
-        messageField.backgroundColor = .green
+        messageField.backgroundColor = .yellow
         
-        chatView = UITextView(frame: CGRect(x: 0, y: view.frame.height / 1.5, width: view.frame.width / 2.0, height: 100))
+        chatView = UITextView(frame: CGRect(x: 0, y: view.frame.height / 1.7, width: view.frame.width / 2.0, height: 100))
         chatView.center = CGPoint(x: view.center.x, y: chatView.center.y)
         chatView.textAlignment = .center
         chatView.textColor = .black
@@ -78,7 +79,14 @@ class UserViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         browseButton.setTitleColor(.lightGray, for: .highlighted)
         browseButton.addTarget(self, action: #selector(showBrowser), for: .touchUpInside)
         
+        login = UIButton(frame: CGRect(x: 0, y: view.frame.height * 0.87, width: view.frame.width / 2.0, height: 50))
+        login.center = CGPoint(x: view.center.x, y: login.center.y)
+        login.setTitle("Login", for: .normal)
+        login.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), for: .normal)
+        login.setTitleColor(.lightGray, for: .highlighted)
+        login.addTarget(self, action: #selector(Signin), for: .touchUpInside)
         
+        view.addSubview(login)
         view.addSubview(browseButton)
         view.addSubview(chatView)
         view.addSubview(messageField)
@@ -87,10 +95,17 @@ class UserViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         
     }
     
+    func Signin() {
+        //redirect
+        navigationController?.pushViewController(UserLoginViewController(), animated: true)
+    }
     
     func sendChat() {
         // Bundle up the text in the message field, and send it off to all
         // connected peers
+        
+        messageField.resignFirstResponder()
+        chatView.resignFirstResponder()
         
         let msg = self.messageField.text?.data(using: String.Encoding.utf8,
                                                            allowLossyConversion: false)

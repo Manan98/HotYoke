@@ -12,7 +12,11 @@
 		0A9B10351E4F907B00FE3E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9B10341E4F907B00FE3E04 /* Assets.xcassets */; };
 		0A9B10381E4F907B00FE3E04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9B10361E4F907B00FE3E04 /* LaunchScreen.storyboard */; };
 		0A9B10441E4FC71F00FE3E04 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B10431E4FC71F00FE3E04 /* UserViewController.swift */; };
-		0A9B10461E4FC75400FE3E04 /* ProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B10451E4FC75400FE3E04 /* ProviderViewController.swift */; };
+		0A9B104A1E50385800FE3E04 /* MeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B10491E50385800FE3E04 /* MeterViewController.swift */; };
+		0A9B104C1E503F4600FE3E04 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B104B1E503F4600FE3E04 /* UserLoginViewController.swift */; };
+		0A9E9E201E50802500357C6D /* LoggedinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E9E1F1E50802500357C6D /* LoggedinViewController.swift */; };
+		0A9E9E221E50804700357C6D /* ProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E9E211E50804700357C6D /* ProviderViewController.swift */; };
+		0A9E9E251E509E2D00357C6D /* BrickHacks-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E9E241E509E2D00357C6D /* BrickHacks-Bridging-Header.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +27,12 @@
 		0A9B10371E4F907B00FE3E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9B10391E4F907B00FE3E04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A9B10431E4FC71F00FE3E04 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		0A9B10451E4FC75400FE3E04 /* ProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProviderViewController.swift; path = ../ProviderViewController.swift; sourceTree = "<group>"; };
+		0A9B10491E50385800FE3E04 /* MeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterViewController.swift; sourceTree = "<group>"; };
+		0A9B104B1E503F4600FE3E04 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		0A9E9E1F1E50802500357C6D /* LoggedinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedinViewController.swift; sourceTree = "<group>"; };
+		0A9E9E211E50804700357C6D /* ProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderViewController.swift; sourceTree = "<group>"; };
+		0A9E9E231E509E2C00357C6D /* BrickHacks-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrickHacks-Bridging-Header.h"; sourceTree = "<group>"; };
+		0A9E9E241E509E2D00357C6D /* BrickHacks-Bridging-Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrickHacks-Bridging-Header.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +65,18 @@
 		0A9B102C1E4F907B00FE3E04 /* BrickHacks */ = {
 			isa = PBXGroup;
 			children = (
+				0A9E9E211E50804700357C6D /* ProviderViewController.swift */,
+				0A9E9E1F1E50802500357C6D /* LoggedinViewController.swift */,
 				0A9B102D1E4F907B00FE3E04 /* AppDelegate.swift */,
-				0A9B10451E4FC75400FE3E04 /* ProviderViewController.swift */,
 				0A9B10431E4FC71F00FE3E04 /* UserViewController.swift */,
+				0A9B104B1E503F4600FE3E04 /* UserLoginViewController.swift */,
+				0A9B10491E50385800FE3E04 /* MeterViewController.swift */,
 				0A9B102F1E4F907B00FE3E04 /* ViewController.swift */,
 				0A9B10341E4F907B00FE3E04 /* Assets.xcassets */,
 				0A9B10361E4F907B00FE3E04 /* LaunchScreen.storyboard */,
 				0A9B10391E4F907B00FE3E04 /* Info.plist */,
+				0A9E9E241E509E2D00357C6D /* BrickHacks-Bridging-Header.m */,
+				0A9E9E231E509E2C00357C6D /* BrickHacks-Bridging-Header.h */,
 			);
 			path = BrickHacks;
 			sourceTree = "<group>";
@@ -99,6 +113,7 @@
 				TargetAttributes = {
 					0A9B10291E4F907B00FE3E04 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,9 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9B104C1E503F4600FE3E04 /* UserLoginViewController.swift in Sources */,
+				0A9B104A1E50385800FE3E04 /* MeterViewController.swift in Sources */,
 				0A9B10301E4F907B00FE3E04 /* ViewController.swift in Sources */,
+				0A9E9E221E50804700357C6D /* ProviderViewController.swift in Sources */,
+				0A9E9E201E50802500357C6D /* LoggedinViewController.swift in Sources */,
+				0A9E9E251E509E2D00357C6D /* BrickHacks-Bridging-Header.m in Sources */,
 				0A9B10441E4FC71F00FE3E04 /* UserViewController.swift in Sources */,
-				0A9B10461E4FC75400FE3E04 /* ProviderViewController.swift in Sources */,
 				0A9B102E1E4F907B00FE3E04 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,10 +273,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BrickHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CUAppDev.BrickHacks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickHacks/BrickHacks-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -266,10 +288,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BrickHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CUAppDev.BrickHacks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickHacks/BrickHacks-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -293,6 +317,7 @@
 				0A9B103E1E4F907B00FE3E04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
